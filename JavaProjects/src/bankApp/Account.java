@@ -8,7 +8,7 @@ public abstract class Account implements IRate {
 	private String name;
 	private String ssn;
 	private double balance;
-	private String accountNumber;
+	protected String accountNumber;
 	protected double rate;
 	
 	static int index = 10000;
@@ -27,6 +27,28 @@ public abstract class Account implements IRate {
 	
 	
 	// List common methods: deposit, withdraw, transfer
+	
+	public void deposit(double amount){
+		balance = balance + amount;		
+		System.out.println("Depositing EUR " + amount);
+		printBalance();
+	}
+	
+	public void withdraw(double amount){
+		balance = balance - amount;
+		System.out.println("Withdrawing EUR " + amount);
+		printBalance();
+	}
+	
+	public void transfer(String toWhere, double amount){
+		balance = balance - amount;
+		System.out.println("Transfering EUR " + amount + " to " + toWhere);		
+		printBalance();
+	}
+
+	public void printBalance() {
+		System.out.println("Your balance is now EUR " + getBalance());
+	}
 	
 	public String getName() {
 		return name;
@@ -65,6 +87,13 @@ public abstract class Account implements IRate {
 
 	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
+	}
+	
+	public void compound() {
+		//balance * rate
+		double accruedInterest = balance * (rate / 100);
+		balance = balance + accruedInterest;
+		printBalance();	
 	}
 
 

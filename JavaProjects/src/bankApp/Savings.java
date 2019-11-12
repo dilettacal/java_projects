@@ -30,7 +30,7 @@ public class Savings extends Account {
 		return safetyDepositBankKey;
 	}
 
-
+	
 
 
 	public void showInfo() {
@@ -45,8 +45,6 @@ public class Savings extends Account {
 		System.out.println("====== =============== =====");
 		
 	}
-
-
 
 
 	@Override
