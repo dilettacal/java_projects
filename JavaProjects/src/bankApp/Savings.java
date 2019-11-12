@@ -39,9 +39,18 @@ public class Savings extends Account {
 		System.out.println(
 				"Your Savings Account Features:" + "\n"
 				+ "Safety Deposit Box ID: " + safetyDepositBoxID + "\n"
-				+ "Safety Deposit Box Key: " + safetyDepositBankKey
+				+ "Safety Deposit Box Key: " + safetyDepositBankKey+ "\n"+
+				"Rate: " + rate + "%"
 				);
 		System.out.println("====== =============== =====");
 		
+	}
+
+
+
+
+	@Override
+	public void setRate() {
+		rate = getBaseRate() * 0.15;
 	}
 }

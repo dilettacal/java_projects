@@ -27,8 +27,14 @@ public class Checking extends Account {
 		System.out.println(
 				"Your Checking Account Features:" + "\n"
 				+ "Debit Card Number: " + debitCardNumber + "\n"
-				+ "Debit Card PIN: " + debitCardPIN
+				+ "Debit Card PIN: " + debitCardPIN + "\n"
+				+ "Rate: " + rate + "%"
 				);
 		System.out.println("====== =============== =====");
+	}
+
+	@Override
+	public void setRate() {
+		rate = getBaseRate() * 0.25;
 	}
 }

@@ -9,7 +9,7 @@ public abstract class Account implements IRate {
 	private String ssn;
 	private double balance;
 	private String accountNumber;
-	private double rate;
+	protected double rate;
 	
 	static int index = 10000;
 		
@@ -20,8 +20,10 @@ public abstract class Account implements IRate {
 		this.balance = initDeposit;
 		index++;
 		this.accountNumber = setAccountNumber();
-		
+		setRate(); // call the respective rate
 	}
+	
+	public abstract void setRate();
 	
 	
 	// List common methods: deposit, withdraw, transfer
